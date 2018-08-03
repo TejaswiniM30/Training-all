@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	   http://www.springframework.org/schema/beans/spring-beans.xsd"
+	   default-init-method="ginit" default-destroy-method="gdestroy">
+	   
+	   
+ <!-- by default when a bean is created it will be singleton -->  
+ 
+ 
+<bean id="defaultHello" class="com.training.basics.DefaultHello">  
+<!-- the data can be supplied to the bean either with setters or constructors -->
+<property name="name" value="Teja"/>
+<property name="city" value="Bengaluru"/>
+</bean>		
+
+<bean id="defaultHello1" class="com.training.basics.DefaultHello">  
+<!-- the data can be supplied to the bean either with setters or constructors -->
+<property name="name" value="Pooja"/>
+<property name="city" value="Shimoga"/>
+</bean>		
+
+
+
+</beans>

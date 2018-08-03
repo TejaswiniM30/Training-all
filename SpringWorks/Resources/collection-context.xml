@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	   http://www.springframework.org/schema/beans/spring-beans.xsd"
+	default-init-method="ginit" default-destroy-method="gdestroy">
+
+
+	<!-- by default when a bean is created it will be singleton -->
+
+
+	<bean id="questionBank"
+		class="com.training.collections.QuestionBank">
+		<property name="question"
+			value="Inheritance is available in...." />
+		<property name="options">
+			<list>
+				<value>Java</value>
+				<value>C++</value>
+				<value>SCALA</value>
+				<value>ALL</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="addressSet" class="com.training.collections.AddressSet">
+		<property name="addresses">
+			<set>
+				<value>#20,Street123</value>
+				<value>#45,Street789</value>
+				<value>#87,Street567</value>
+				<value>#34,Street234</value>
+			</set>
+		</property>
+	</bean>
+
+	<bean id="accountMap" class="com.training.collections.AccountMap">
+		<property name="accountMap">
+			<map>
+				<entry key="Teja" value="4000" />
+				<entry key="Rama" value="5000" />
+				<entry key="John" value="9000" />
+				<entry key="Lorraine" value="8000" />
+			</map>
+		</property>
+
+	</bean>
+	
+	<bean id="myCollection" class="com.training.collections.MyCollection" autowire="byName"/>
+	
+	
+	
+
+
+
+</beans>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans   
+       http://www.springframework.org/schema/beans/spring-beans.xsd   
+       http://www.springframework.org/schema/aop   
+       http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+	<!-- this is to defing the app that it has aspects and spring container 
+		shall read it create a proxy for every aspect -->
+
+	<aop:aspectj-autoproxy />
+	
+	<!-- all aspect entry -->
+	<!-- <bean class="com.training.aop.banking.LoggingAspect"/> -->
+	<!-- <bean class="com.training.aop.banking.LoggingAspectAfter"/> -->
+	<bean class="com.training.aop.banking.LoggingAspectAround"/>
+
+	<bean id="account1" class="com.training.aop.model.Account">
+		<property name="accNo" value="101" />
+		<property name="accName" value="Tejaswini" />
+		<property name="balance" value="10000" />
+	</bean>
+
+	<bean id="account2" class="com.training.aop.model.Account">
+		<property name="accNo" value="102" />
+		<property name="accName" value="Ramana" />
+		<property name="balance" value="20000" />
+	</bean>
+
+	<bean id="sbAccount" class="com.training.aop.model.SBAccount">
+		<property name="acc" ref="account1" />
+
+	</bean>
+
+	<bean id="caAccount" class="com.training.aop.model.CAAccount">
+		<property name="acc" ref="account2" />
+
+	</bean>
+
+	<bean id="banking" class="com.training.aop.model.BankingService"
+		autowire="byName" />
+
+
+
+
+
+</beans>
